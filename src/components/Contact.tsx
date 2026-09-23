@@ -55,7 +55,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="px-6 py-24 max-w-3xl mx-auto">
+    <section id="contact" className="px-6 py-20 max-w-3xl mx-auto">
       <Reveal>
         <h2 className="font-heading font-bold text-3xl text-foreground mb-4">Contact</h2>
         <p className="text-muted-foreground mb-10">

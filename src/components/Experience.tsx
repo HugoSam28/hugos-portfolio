@@ -3,10 +3,10 @@ import { Reveal } from './Reveal'
 
 export function Experience() {
   return (
-    <section id="experience" className="px-6 py-24 max-w-5xl mx-auto">
+    <section id="experience" className="px-6 py-20 max-w-5xl mx-auto">
       <Reveal>
         <h2 className="font-heading font-bold text-3xl text-foreground mb-10">
-          Expérience
+          Expériences
         </h2>
       </Reveal>
       <Reveal stagger className="flex flex-col">
@@ -18,7 +18,7 @@ export function Experience() {
                 <span className="w-px flex-1 bg-border" aria-hidden="true" />
               )}
             </div>
-            <div className="pb-10">
+            <div className={index < experience.length - 1 ? 'pb-10' : 'pb-5'}>
               <p className="text-sm text-muted-foreground">{item.period}</p>
               <h3 className="font-heading font-semibold text-lg text-foreground">
                 {item.role} · {item.company}

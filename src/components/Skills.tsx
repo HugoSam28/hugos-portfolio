@@ -3,7 +3,7 @@ import { Reveal } from './Reveal'
 
 export function Skills() {
   return (
-    <section id="skills" className="px-6 py-24 max-w-5xl mx-auto bg-card/50">
+    <section id="skills" className="px-6 py-20 max-w-5xl mx-auto bg-card/50">
       <Reveal>
         <h2 className="font-heading font-bold text-3xl text-foreground mb-10">
           Compétences

@@ -91,7 +91,7 @@ export const projects: Project[] = [
         title: 'Back Office',
         description:
           'Application frontend admin permettant la gestion des différents véhicules et utilisateurs.',
-        tags: ['React'],
+        tags: ['React', 'Vite'],
       },{
         title: 'API',
         description:
