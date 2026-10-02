@@ -6,7 +6,7 @@ export function About() {
   return (
     <section id="about" className="px-6 py-20 max-w-5xl mx-auto">
       <Reveal className="grid sm:grid-cols-[auto_1fr] gap-10 items-start">
-        <img src="ProfilePic.jpeg" className="w-32 h-32 rounded-2xl bg-muted shrink-0" aria-hidden="true" />
+        <img src="/ProfilePic.jpeg" alt="Photo de Hugo - Picture of Hugo" width={128} height={128} decoding="async" className="w-32 h-32 rounded-2xl bg-muted shrink-0" aria-hidden="true" />
         <div className="flex flex-col gap-4">
           <h2 className="font-heading font-bold text-3xl text-foreground">À propos</h2>
           {about.paragraphs.map((paragraph) => (

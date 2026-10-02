@@ -38,7 +38,7 @@ export function Nav() {
     <header
       className={`fixed top-0 inset-x-0 z-50 border-b transition-colors duration-300 ${
         scrolled || menuOpen
-          ? 'bg-background/70 backdrop-blur-md border-border'
+          ? 'bg-background/95 border-border'
           : 'border-transparent'
       }`}
     >

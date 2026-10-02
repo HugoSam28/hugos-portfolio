@@ -1,9 +1,4 @@
-import { useRef, type ReactNode } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useGSAP } from '@gsap/react'
-
-gsap.registerPlugin(ScrollTrigger, useGSAP)
+import { useEffect, useRef, type ReactNode } from 'react'
 
 type RevealProps = {
   children: ReactNode
@@ -13,40 +8,58 @@ type RevealProps = {
   as?: keyof HTMLElementTagNameMap
 }
 
+// Un seul observer partagé par toutes les révélations.
+let observer: IntersectionObserver | null = null
+const observed = new Set<Element>()
+
+function getObserver() {
+  observer ??= new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+          // Visible, ou déjà dépassé (saut d'ancre) : on révèle.
+          entry.target.classList.add('is-visible')
+        } else {
+          // Repasse sous la zone visible (scroll vers le haut) : rejoue à la prochaine entrée.
+          entry.target.classList.remove('is-visible')
+        }
+      }
+      // Un saut de scroll peut dépasser des blocs sans jamais les croiser : on les révèle.
+      observed.forEach((el) => {
+        if (el.getBoundingClientRect().top < 0) el.classList.add('is-visible')
+      })
+    },
+    { rootMargin: '0px 0px -15% 0px' },
+  )
+  return observer
+}
+
 export function Reveal({ children, className, stagger = false, as = 'div' }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
   const Tag = as as 'div'
 
-  useGSAP(
-    () => {
-      const el = ref.current
-      if (!el) return
-
-      const prefersReducedMotion = window.matchMedia(
-        '(prefers-reduced-motion: reduce)',
-      ).matches
-      if (prefersReducedMotion) return
-
-      const targets = stagger ? Array.from(el.children) : el
-
-      gsap.from(targets, {
-        opacity: 0,
-        y: 24,
-        duration: 0.5,
-        stagger: stagger ? 0.08 : 0,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none reverse',
-        },
-      })
-    },
-    { scope: ref },
-  )
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    if (stagger) {
+      Array.from(el.children).forEach((child, i) =>
+        (child as HTMLElement).style.setProperty('--i', String(i)),
+      )
+    }
+    const io = getObserver()
+    io.observe(el)
+    observed.add(el)
+    return () => {
+      io.unobserve(el)
+      observed.delete(el)
+    }
+  }, [stagger])
 
   return (
-    <Tag ref={ref} className={className}>
+    <Tag
+      ref={ref}
+      className={`${stagger ? 'reveal-stagger' : 'reveal'}${className ? ` ${className}` : ''}`}
+    >
       {children}
     </Tag>
   )
