@@ -24,6 +24,9 @@
 html {
   scroll-behavior: smooth;
 }
+.availability {
+  margin: 0 0 -15px 3px;
+}
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -40,11 +43,11 @@ html {
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), sans-serif;
 }
 
 :focus-visible {
@@ -75,4 +78,11 @@ h1, h2, h3, h4 {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Index d'animation défini en JS (Reveal.tsx) ; déclaré pour que l'IDE le résolve. */
+@property --i {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
 }

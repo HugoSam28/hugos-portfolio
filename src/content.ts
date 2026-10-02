@@ -6,7 +6,7 @@ export const profile = {
   location: 'Namur & Liège, Belgique',
   availability: 'Disponible pour de nouvelles missions',
   email: 'hugo.samray@icloud.com',
-  cvUrl: '/cv.pdf',
+  cvUrl: `${import.meta.env.BASE_URL}cv.pdf`,
   socials: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/hugo-samray/' },
   ],
@@ -45,7 +45,7 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Etudiant en Bachelier informatique orientation développement d'application",
+    role: "Bachelier informatique orientation développement d'application",
     company: 'Henallux',
     period: 'Sept 2022 — Août 2026',
     bullets: [
@@ -95,7 +95,7 @@ export const projects: Project[] = [
       },{
         title: 'API',
         description:
-          'API complète reliant le tout',
+          'API complète avec vérification admin, validateurs, token, etc.',
         tags: ['NodeJS', 'Express', 'PostgreSQL'],
       },
     ]

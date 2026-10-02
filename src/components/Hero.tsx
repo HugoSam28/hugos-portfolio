@@ -9,7 +9,7 @@ export function Hero() {
       className="relative min-h-screen flex flex-col items-start justify-center px-6 max-w-5xl mx-auto"
     >
       <Reveal stagger className="flex flex-col gap-6">
-        <p className="text-accent font-medium tracking-wide uppercase text-sm">
+        <p className="text-accent font-medium tracking-wide uppercase text-sm availability">
           {profile.availability}
         </p>
         <h1 className="font-heading font-bold text-4xl sm:text-6xl leading-tight text-foreground">
