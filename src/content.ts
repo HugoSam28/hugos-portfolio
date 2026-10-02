@@ -2,7 +2,7 @@
 export const profile = {
   name: 'Hugo Samray',
   role: 'Développeur Full-Stack',
-  tagline: "Je m'occupe de concevoir et de développer des produits web soignés, du prototype à la mise en production.",
+  tagline: "Je m'occupe de concevoir et de développer des produits webs et natifs soignés, du prototype à la mise en production.",
   location: 'Namur & Liège, Belgique',
   availability: 'Disponible pour de nouvelles missions',
   email: 'hugo.samray@icloud.com',
@@ -14,10 +14,10 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    "Fraichement diplomé de l'Henallux, je suis actuellement à la recherche d'un emplois en développement " +
+    "Fraichement diplomé de l'Henallux, je suis actuellement à la recherche d'un emploi en développement " +
       "d'application.",
     "J'aime particulièrement suivre un projet du début à la fin, en posant des questions sur ce que le client " +
-      "souhaite. Je crée des projet adaptés pour pc et  mbile, avec une interface responsive et cohérente.",
+      "souhaite. Je crée des projets adaptés pour pc et mobile, avec une interface responsive et cohérente.",
     "Cependant, je suis tout à fait ouvert à travailler sur un projet déjà existant, à le corriger ou y ajouter de " +
       "nouvelles fonctionnalités.",
     "En dehors du code, "
@@ -31,8 +31,8 @@ export type SkillGroup = {
 
 export const skills: SkillGroup[] = [
   { category: 'Langages', items: ['JavaScript','Java', 'C', 'C#', 'SQL'] },
-  { category: 'Frontend', items: ['React', 'Vite', 'React Native', 'AureliaJS'] },
-  { category: 'Backend', items: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'SQLServer'] },
+  { category: 'Frontend', items: ['React','Node.js', 'Vite', 'React Native', 'AureliaJS'] },
+  { category: 'Backend', items: ['Express', 'PostgreSQL', 'MongoDB', 'SQLServer'] },
   { category: 'Outils', items: ['Git', 'Docker', 'VSCode', 'WebStorm', 'Claude Code'] },
 ]
 
@@ -49,7 +49,7 @@ export const experience: ExperienceItem[] = [
     company: 'Henallux',
     period: 'Sept 2022 — Août 2026',
     bullets: [
-      ""
+      'Frontend', 'Backend', 'Mobile', 'Algorithmes', 'Analyse'
     ],
   },
   {
@@ -57,7 +57,7 @@ export const experience: ExperienceItem[] = [
     company: 'De Buck Technologies',
     period: 'Sept 2025 - Déc 2025',
     bullets: [
-      "Travailler sur l'application MyBanka afin de la publier sur les stores",
+      "Porter le site Web Myanka sur les stores d'applications mobiles",
     ],
   },
 ]
@@ -76,8 +76,8 @@ export const projects: Project[] = [
     title: 'Smart city',
     description:
     "Dans le cadre de mes cours de 3ème, nous avons travaillé sur un projet smart city. Notre groupe a choisi de " +
-      "travailler sur une application permettant de regrouper sur une carte divers vehicules à partager, comme des" +
-      " vélos élecrtiques, trottinettes, voiture, etc. CE projet se divise en 3 sous projets. :",
+      "travailler sur une application permettant de regrouper sur une carte divers vehicules à partager, comme des " +
+      "vélos élecrtiques, trottinettes, voiture, etc. CE projet se divise en 3 sous projets. :",
     subProjects: [
       {
         title: 'Application ReactNative',
@@ -101,8 +101,15 @@ export const projects: Project[] = [
     ]
   },
   {
+    title: "TinyHome",
+    description: "Projet réalisé dans le cadre du cours de Java. l'objectif était de réaliser un site de vente en " +
+      "ligne, avec connexion, historique de commande, filtrer les articles par catégories, gestion du panier, " +
+      "responsive, etc.",
+    tags: ['Java', 'Spring', 'PayPal Sandbox', 'MySQL'],
+  },
+  {
     title: "BillBoard Manager",
-    description: "Projet vibe codé à la demande de la Jeunesse de magnée. elle regroupe différents panneaux " +
+    description: "Projet vibe codé à la demande de la Jeunesse de magnée. L'app regroupe différents panneaux " +
       "d'affichages, ou les membres peuvent dire quand ils ont collé une affiche sur ce panneau. les admin peuvent " +
       "aussi ajouter des panneaux et gérer les utilisateurs.",
     tags : ['React', 'Vite', 'MongoDB'],
@@ -117,7 +124,6 @@ export const projects: Project[] = [
     tags : ['JS'],
     repoUrl : "https://github.com/HugoSam28/JDM-4hCuistax",
   }
-
 ]
 
 export const nav = [
