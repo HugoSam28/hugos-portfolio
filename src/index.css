@@ -6,7 +6,7 @@
 
   --color-primary: #18181b;
   --color-on-primary: #ffffff;
-  --color-secondary: #3f3f46;
+  --color-secondary: #676770;
   --color-on-secondary: #ffffff;
   --color-accent: #2563eb;
   --color-on-accent: #ffffff;
@@ -21,7 +21,29 @@
   --color-on-destructive: #ffffff;
 }
 
+/* Dark mode automatique (préférence système), sans bouton. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #fafafa;
+    --color-on-primary: #09090b;
+    --color-secondary: #a1a1aa;
+    --color-on-secondary: #09090b;
+    --color-accent: #3577F0;
+    --color-on-accent: #09090b;
+    --color-background: #17171a;
+    --color-foreground: #fafafa;
+    --color-card: #202023;
+    --color-card-foreground: #fafafa;
+    --color-muted: #27272a;
+    --color-muted-foreground: #a1a1aa;
+    --color-border: #3f3f46;
+    --color-destructive: #f87171;
+    --color-on-destructive: #09090b;
+  }
+}
+
 html {
+  color-scheme: light dark;
   scroll-behavior: smooth;
 }
 .availability {
