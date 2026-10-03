@@ -6,7 +6,7 @@ export const profile = {
   location: 'Namur & Liège, Belgique',
   availability: 'Disponible pour de nouvelles missions',
   email: 'hugo.samray@icloud.com',
-  cvUrl: `${import.meta.env.BASE_URL}cv.pdf`,
+  cvUrl: `${import.meta.env.BASE_URL}CV – Hugo Samray.pdf`,
   socials: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/hugo-samray/' },
   ],
@@ -78,6 +78,7 @@ export const projects: Project[] = [
     "Dans le cadre de mes cours de 3ème, nous avons travaillé sur un projet smart city. Notre groupe a choisi de " +
       "travailler sur une application permettant de regrouper sur une carte divers vehicules à partager, comme des " +
       "vélos élecrtiques, trottinettes, voiture, etc. CE projet se divise en 3 sous projets. :",
+    repoUrl: "https://github.com/HugoSam28/2024_SmartCity",
     subProjects: [
       {
         title: 'Application ReactNative',
@@ -106,6 +107,7 @@ export const projects: Project[] = [
       "ligne, avec connexion, historique de commande, filtrer les articles par catégories, gestion du panier, " +
       "responsive, etc.",
     tags: ['Java', 'Spring', 'PayPal Sandbox', 'MySQL'],
+    repoUrl: "https://gitlab.com/HugoSam_2805/lambertsamray"
   },
   {
     title: "BillBoard Manager",
