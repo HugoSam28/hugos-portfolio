@@ -20,7 +20,6 @@ export const about = {
       "souhaite. Je crée des projets adaptés pour pc et mobile, avec une interface responsive et cohérente.",
     "Cependant, je suis tout à fait ouvert à travailler sur un projet déjà existant, à le corriger ou y ajouter de " +
       "nouvelles fonctionnalités.",
-    "En dehors du code, "
   ],
 }
 
